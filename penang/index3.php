@@ -14,8 +14,9 @@ session_start();
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">    </script>
 
         <link rel="stylesheet"  href="PenangTourism.css" media="all" />
     </head>
@@ -30,6 +31,7 @@ session_start();
         ?>
 
         <!-- Heading End -->
+
 
 
         <div class="row">
@@ -58,8 +60,44 @@ session_start();
 						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGzxJMTW5HyjMxtlhKi0wQ7HxHYeP8iKc&callback=initMap"></script>
 				</div>
                 </div>
-            </div>
+                <h2>Current Weather</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Check Weather</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Penang City's Current Weather.</h4>
         </div>
+        <div class="modal-body">
+          <div><center><h1 id="weather" style="font-size: 60px; color: blue;"></h1></center></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+            </div>
+
+        </div>
+        <!-- Weather Api -->
+        <script type="text/javascript">
+    var path = "http://api.openweathermap.org/data/2.5/weather?q=penang&APPID=f6b7c962f75378f682396c5abee3f7b2&units=metric";
+    $.getJSON(path, function (data) {
+        //data = JSON.stringify(data);
+        //alert(JSON.stringify(data));
+        var textNode = JSON.stringify(data.weather[0].main);
+        $("#weather").append(textNode);
+
+    });
+</script>
         <br>
         <br>
         <!---About Penang and Hotel Booking Finish------------------------------>
