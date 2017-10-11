@@ -103,6 +103,16 @@ if(isset($_GET['view_contact'])){
 <?php 
 } 
 ?>
+	
+
+	<?php
+	if(isset($_GET['update'])){
+	?>	
+	<title>Update</title>
+			
+<?php 
+} 
+?>
 
 
 
@@ -134,6 +144,7 @@ if(isset($_GET['view_contact'])){
 								<li><a href ="firstPage.php?insert_attraction">Inserting Attraction</a></li>
 								<li><a href ="firstPage.php?view_attraction">View Attraction</a></li>
 								<li><a href ="firstPage.php?view_contact">View Contact</a></li>
+								<li><a href ="firstPage.php?update">Update/a></li>
 								<li><a href ="register.php">Register</a></li>
 								<li><a href ="logout.php">Admin Logout</a></li>
 					</ul>
@@ -192,10 +203,10 @@ if(isset($_GET['view_contact'])){
 									include ("inc/view_contact.php");
 								}
 								
-							
-							
-							
-							
+						
+								if(isset($_GET['update'])){
+									include ("inc/update.php");
+								}
 							?>
 
 						
