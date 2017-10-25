@@ -164,6 +164,54 @@ function getShop() {
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+// function to enter event from admin page to web 
+function getEvent(){ 
+ if (!isset($_GET['event'])) {
+
+        global $con;
+
+        $get_event = "select * from event order by RAND() LIMIT 0,100";
+
+        $run_event = mysqli_query($con, $get_event);
+
+        while ($row_event = mysqli_fetch_array($run_event)) {
+
+
+
+            $event_id = $row_event['event_id'];
+            $event_name = $row_event['event_name'];
+            $event_image = $row_event['event_image'];
+            $event_desc = $row_event['event_desc'];
+
+            echo "
+			
+			<div id='single_product'>
+			
+				
+				
+				<p style='font-style: normal; font-weight:bold; text-align:justify; color:black; font-size: 28px;'> $event_name</p>
+				
+				
+				
+				
+				<img src='tourism/admin_area/event_images/$event_image' width='775' height='570' />
+				
+				
+				
+					
+					<p style='font-style: normal; font-weight:bold; text-align:justify; color:black; font-size: 18px;'>
+					  $event_desc </p>
+			
+			</div>
+		
+		
+		";
+        }
+    }
+}	
+	
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
