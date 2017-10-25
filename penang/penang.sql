@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2016 at 10:03 AM
--- Server version: 5.6.17-log
+-- Generation Time: Oct 25, 2017 at 08:56 AM
+-- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `contact_email` varchar(255) NOT NULL,
   `contact_comments` varchar(255) NOT NULL,
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `contact`
@@ -46,6 +46,32 @@ INSERT INTO `contact` (`contact_id`, `contact_name`, `contact_email`, `contact_c
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `event`
+--
+
+CREATE TABLE IF NOT EXISTS `event` (
+  `event_id` int(100) NOT NULL AUTO_INCREMENT,
+  `event_name` varchar(255) NOT NULL,
+  `event_image` text NOT NULL,
+  `event_desc` text NOT NULL,
+  PRIMARY KEY (`event_name`),
+  UNIQUE KEY `event_id` (`event_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`event_id`, `event_name`, `event_image`, `event_desc`) VALUES
+(1, 'Bon Odori Festival ', 'bonodori.jpg', 'Organised by the Malaysian Japanese Society, the Bon Odori Festival is the Japanese version of the Chinese''s Hungry Ghost Festival, where Japanese expatriates both young and old take part in this carnival-like festival to pay homage to their descendants. A traditional and merry Japanese festival that is celebrated with dance and lively drum performances to welcome the homecoming of ancestral spirits. The carnival-like atmosphere is made even merrier with stalls selling a variety of local and Japanese food, fireworks display, Japanese souvenirs, lively performances and games.\r\n'),
+(4, 'George Town Festival', 'georgetownfestival.jpg', 'George Town Festival. Held annually since 2010 to commemorate George Town’s listing on the UNESCO heritage listing in 2008, it is a month long festival celebrating art, music, theatre, dance, opera and film. It usually runs from June to July and has attracted a lot of attention around the globe as one of the leading arts festivals in the region. It has a unique blend of local as well as international cultural showcases.\r\n'),
+(3, 'Penang Bridge International Marathon', 'pbim.jpg', 'The Penang Bridge International Marathon or Penang Bridge Marathon is an annual marathon event held in Penang Bridge, Penang, Malaysia. The event was established in 1985. Participants run over the longest bridge in Malaysia, Penang Bridge or Sultan Abdul Halim Muadzam Shah Bridge, and along a scenic coastal highway. This is the only time of the year when the bridge is closed for several hours. The biggest run in the country incorporates a full marathon, a half-marathon and a quarter-marathon.\r\n				'),
+(2, 'Penang International Dragon Boat Festival ', 'dragonboat.jpg', 'The Penang Dragon Boat Festival is one on many dragon boat races in Malaysia, but it is easily the most impressive. The drums beat rhythmically as the long colourful boats glide across the surface led by enormous dragon heads. The Penang Dragon Boat Festival began in 1979, although dragon boats races in Malaysia have been happening since 1934. The boats are about 10 metres long and manned by a crew of about 20 rowers sitting in pairs. The winners are crowned as kings.'),
+(5, 'Songkran Water Festival', 'songkran.jpg', 'The Annual Songkran Water Festival has been organized for more than 15 years by this temple. Chaiya Mangalaran Buddhist Temple is the oldest Thai Temple in Malaysia, the temple was built in 1845. It is a unique and beautiful tourist attraction in Penang, welcoming thousands of foreign visitors daily.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `hotel`
 --
 
@@ -55,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `hotel` (
   `hotel_image` text NOT NULL,
   `hotel_desc` text NOT NULL,
   PRIMARY KEY (`hotel_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `hotel`
@@ -85,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `restaurant_image` text NOT NULL,
   `restaurant_desc` text NOT NULL,
   PRIMARY KEY (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `restaurant`
@@ -113,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `shopping` (
   `shopping_image` text NOT NULL,
   `shopping_desc` text NOT NULL,
   PRIMARY KEY (`shopping_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `shopping`
