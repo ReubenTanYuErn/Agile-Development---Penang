@@ -30,7 +30,8 @@ if ($_GET) {
                 include 'inc/login/login_form.php';
             }
             break;
-
+	
+	//login session fixed.
         case 'xpire':
             $msg = "Your session has expired. Please log in again.";
             include 'inc/login/login_form.php';
