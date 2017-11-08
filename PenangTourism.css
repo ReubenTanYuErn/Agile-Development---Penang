@@ -1,0 +1,52 @@
+body {
+font: 400 15px/1.8 Lato, sans-serif;
+color: black;
+background-color: #fff2e6;
+
+}
+
+.carousel-inner img {
+
+width: 100%; 
+margin: auto;
+
+}
+
+.list-group-item:last-child {
+border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;
+}
+
+
+.nav-tabs li a {
+color: #777;
+}
+
+.navbar {
+font-family: Montserrat, sans-serif;
+background-color : #ffe6b3;
+border: 0;
+font-size: 17px !important;
+letter-spacing: 4px;
+opacity: 0.9;
+color: black;
+}
+
+.navbar li a, .navbar .navbar-brand {
+color: black !important;
+}
+.navbar-nav li a:hover {
+color:  black !important;
+}
+.navbar-nav li.active a {
+color:  black !important;
+background-color: #29292c !important;
+}
+
+.map {
+	margin: 10;
+	height: 85%;
+	width:30%;
+	float:right;
+}
+
