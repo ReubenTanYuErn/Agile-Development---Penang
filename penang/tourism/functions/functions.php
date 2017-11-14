@@ -21,6 +21,27 @@ function getIp() {
     return $ip;
 }
 
+//function to update hotel from admin page to web
+function updateHot($new_hotel_name,$new_hotel_image,$new_hotel_desc){
+	$nhn = $_POST['new_hotel_name'];
+	$nhp = $_POST['new_hotel_image'];
+	$nhd = $_POST['new_hotel_desc'];
+	
+	if(!empty($nhn)){
+		mysql_query($con,"UPDATE 'hotel_name' SET='$nhn'") or die (mysqli_error($con));
+	}
+	
+	
+	if(!empty($nhp)){
+		mysql_query($con,"UPDATE 'hotel_image' SET='$nhp") or die (mysqli_error($con));
+	}
+	
+	
+	if(!empty($nhd)){
+		mysql_query($con,"UPDATE 'hotel_desc' SET='$nhd'") or die (mysqli_error($con));
+	}
+}
+
 //function to enter hotel from admin page to web 
 function getHot() {
 
@@ -64,9 +85,28 @@ function getHot() {
     }
 }
 
+//function to update restaurant from admin page to web
+function updateRes($new_restaurant_name,$new_restaurant_image,$new_restaurant_desc){
+	$nrn=$new_restaurant_name;
+	$nrp=$new_restaurant_image;
+	$nrd=$new_restaurant_desc;
+	
+	if(!empty($nrn)){
+		mysql_query($con,"UPDATE 'restaurant_name' SET='$nrn'") or die (mysqli_error($con));
+	}
+	
+	
+	if(!empty($nrp)){
+		mysql_query($con,"UPDATE 'restaurant_image' SET='$nrp") or die (mysqli_error($con));
+	}
+	
+	
+	if(!empty($nrd)){
+		mysql_query($con,"UPDATE 'restaurant_desc'  SET='$nrd'") or die (mysqli_error($con));
+	}
+}
 
-//function to enter restaurant from admin page to web 
-
+//function to enter restaurant from admin page to web
 function getRes() {
 
     if (!isset($_GET['restaurant'])) {
@@ -114,6 +154,28 @@ function getRes() {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
+
+//function to update shopping from admin page to web
+function updateShop($new_shopping_name,$new_shopping_image,$new_shopping_desc){
+	$nsn=$new_shopping_name
+	$nsp=$new_shopping_image;
+	$nsd=$new_shopping_desc;
+	
+	if(!empty($nsn)){
+		mysql_query($con,"UPDATE 'shopping_name' SET='$nsn'") or die (mysqli_error($con));
+	}
+	
+	
+	if(!empty($nsp)){
+		mysql_query($con,"UPDATE 'shopping_image' SET='$nsp") or die (mysqli_error($con));
+	}
+	
+	
+	if(!empty($nsd)){
+		mysql_query($con,"UPDATE 'shopping_desc'  SET='$nsd'") or die (mysqli_error($con));
+	}
+}
+
 
 //function to enter shopping from admin page to web 
 function getShop() {
@@ -215,7 +277,6 @@ function getEvent(){
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
-
 //function to enter attraction from admin page to web 
 function getAttraction() {
 
@@ -261,10 +322,9 @@ function getAttraction() {
 		";
         }
     }
+	
 }
-
 //////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 ?>

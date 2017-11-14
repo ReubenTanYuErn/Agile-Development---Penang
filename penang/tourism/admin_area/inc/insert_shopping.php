@@ -61,10 +61,6 @@ if (isset($_POST['insert_post'])) {
 
     $shopping_name = $_POST['shopping_name'];
     $shopping_desc = $_POST['shopping_desc'];
-
-
-
-
     $shopping_image = $_FILES['shopping_image']['name'];
     $shopping_image_tmp = $_FILES['shopping_image']['tmp_name'];
 
@@ -81,5 +77,3 @@ if (isset($_POST['insert_post'])) {
     }
 }
 ?>
-
-
