@@ -52,7 +52,7 @@ session_start();
 
             <div class="col-sm-5">
                <div class="panel panel-default">
-				<div class="panel-heading" style=" font-style: normal; font-weight:bold; font-size: 20px; text-align:center;color : blue;">Penang Money Changers</div>
+				<div class="panel-heading" style=" font-style: normal; font-weight:bold; font-size: 20px; text-align:center;color : blue;"><a href="Money_Changer.php" style="text-decoration:none;">Penang Money Changers</div>
 				<div class="well" id="map" style = "margin:10px;padding:250px;background-color:#F5F5DC;">
 				<script src="Agile_MoneyChangers.js"></script>
 	
@@ -100,29 +100,23 @@ session_start();
 </script>
         <br>
         <br>
-        <!---About Penang and Hotel Booking Finish------------------------------>
+		
+		
 
-        <div class="row">
-
-
+        <!--HOTEL START INDEX PAGE-------------------------------------------->
+			<div class="row">
             <div class="col-sm-12" style=" font-style: normal; font-weight:bolder; text-align:center;">
                 <p style=" font-size: 40px;color:black;"> Best Hotels in Penang  
 
                     <a href="hotel.php">
                         <span class="glyphicon glyphicon-circle-arrow-right"style="size:50px;"></span>
                     </a>
-
-                <p style=" font-style: normal; font-weight:bolder; font-size: 17px; text-align:center;color:black;"><a href="hotel.php" style="text-decoration:none;"> see all hotels... </a></p>
+				
+                <p style=" font-style: normal; font-weight:bolder; font-size: 17px; text-align:center;color:black;"><a href="restaurant.php" style="text-decoration:none;"> see all hotels... </a></p>
 
                 </p>
             </div>
-
-
-        </div>
-
-
-        <!--HOTEL START INDEX PAGE-------------------------------------------->
-
+			</div>
         <?php
         include "index3Hotel.php"
         ?>
@@ -196,6 +190,39 @@ session_start();
         <br/><br/><br/>
 
         <!-----SHOPPING FINISH INDEX PAGE------------------------------------>
+		
+		 <!-----ATTRACTION START INDEX PAGE------------------------------------>
+
+        <br><br>
+
+        <div class="row">
+
+
+            <div class="col-sm-12" style=" font-style: normal; font-weight:bolder; text-align:center;">
+                <p style=" font-size: 40px;color:black;"> Best Attractions in Penang  
+
+                    <a href="attraction.php">
+                        <span class="glyphicon glyphicon-circle-arrow-right"style="size:50px;"></span>
+                    </a>
+
+                <p style=" font-style: normal; font-weight:bolder; font-size: 17px; text-align:center;color:black;"><a href="attraction.php" style="text-decoration:none;"> see all attraction... </a></p>
+
+                </p>
+            </div>
+
+
+        </div>
+
+
+
+        <?php
+        include "index3Attraction.php"
+        ?>
+
+
+        <br/><br/><br/>
+
+        <!-----ATTRACTION FINISH INDEX PAGE------------------------------------>
 
         <!-----FOOTER START----------------------------------------------------->
 
