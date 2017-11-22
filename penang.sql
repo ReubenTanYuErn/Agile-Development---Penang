@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2017 at 08:56 AM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Generation Time: Nov 22, 2017 at 06:54 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `penang`
@@ -23,24 +23,42 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `attraction`
+--
+
+CREATE TABLE `attraction` (
+  `attraction_id` int(100) NOT NULL,
+  `attraction_name` varchar(255) NOT NULL,
+  `attraction_image` text NOT NULL,
+  `attraction_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attraction`
+--
+
+INSERT INTO `attraction` (`attraction_id`, `attraction_name`, `attraction_image`, `attraction_desc`) VALUES
+(1, 'Testing', 'dendi_by_madurobearto-dbjrw89.jpg', 'Testing 123'),
+(2, 'Georgetown', 'asus.jpg', 'HUhuhuhuhuhuu');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `contact`
 --
 
-CREATE TABLE IF NOT EXISTS `contact` (
-  `contact_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contact` (
+  `contact_id` int(11) NOT NULL,
   `contact_name` varchar(255) NOT NULL,
   `contact_email` varchar(255) NOT NULL,
-  `contact_comments` varchar(255) NOT NULL,
-  PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+  `contact_comments` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`contact_id`, `contact_name`, `contact_email`, `contact_comments`) VALUES
-(11, 'tom', 'tom@gmail.com ', 'hii admin...Can you tell to me what kind of room offered in hotel equotorial'),
-(14, 'john', 'john@gmail.com ', 'hi admin, can i know what is the best price hotel in penang'),
 (15, 'tommy', 'tommy@gmail.com ', 'can i book the hotels from here');
 
 -- --------------------------------------------------------
@@ -49,14 +67,12 @@ INSERT INTO `contact` (`contact_id`, `contact_name`, `contact_email`, `contact_c
 -- Table structure for table `event`
 --
 
-CREATE TABLE IF NOT EXISTS `event` (
-  `event_id` int(100) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `event` (
+  `event_id` int(100) NOT NULL,
   `event_name` varchar(255) NOT NULL,
   `event_image` text NOT NULL,
-  `event_desc` text NOT NULL,
-  PRIMARY KEY (`event_name`),
-  UNIQUE KEY `event_id` (`event_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  `event_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `event`
@@ -75,13 +91,12 @@ INSERT INTO `event` (`event_id`, `event_name`, `event_image`, `event_desc`) VALU
 -- Table structure for table `hotel`
 --
 
-CREATE TABLE IF NOT EXISTS `hotel` (
-  `hotel_id` int(100) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `hotel` (
+  `hotel_id` int(100) NOT NULL,
   `hotel_name` varchar(255) NOT NULL,
   `hotel_image` text NOT NULL,
-  `hotel_desc` text NOT NULL,
-  PRIMARY KEY (`hotel_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+  `hotel_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hotel`
@@ -95,9 +110,7 @@ INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `hotel_image`, `hotel_desc`) VALU
 (14, 'Rainbow Paradise Beach Resort Penang', 'rainbow-paradise.jpg', 'Rainbow Paradise Beach Resort, formerly flagged as Paradise Sandy Beach Resort, is a four-star property that allows guests to enjoy deluxe surroundings for much less than expected. If your idea of a fabulous beachside vacation includes manicured gardens, amazing oceanfront views, a comprehensive list of leisure facilities and an array of indulgent spa sessions, then Rainbow Paradise Beach Resort is for you. Located in Tanjung Bungah (between Georgetown and Batu Ferringhi), the resort is just 45 minutes away from the Penang International Airport and hosts 310 suites with private balconies offering views of the ocean.'),
 (15, 'Hotel Equatorial Penang ', 'hotel-equatorial.jpg', 'Hotel Equatorial Penang, the islands only golf and convention resort, is a sprawling five-star property set on Bukit Jambul hill, just seven minutes away from the Penang International Airport. Adjacent to an 18-hole international golf course, driving range and putting green, it is the hotel of choice for golf enthusiasts visiting Penang. Besides that, there is a beautifully-landscaped outdoor swimming pool shaded by swaying palm trees, which comes complete with a waterfall and outdoor Jacuzzi.'),
 (16, 'Bayview Hotel Georgetown Penang', 'bayview-georgetown.jpg', 'Bayview Hotel Georgetown Penang is a four-star property set along Farquhar Street, with some of the citys best attractions such as food courts, malls and historical and cultural landmarks within arms reach. Also nearby is Upper Penang Road, which makes this newly-refurbished four-star property a good option for those who are looking to stay close to the islands best nightlife action. Just 30 minutes away from the Penang International Airport, Bayview Hotel Georgetown pitches at both the traditional and trend-driven guest. '),
-(17, 'Flamingo By The Beach Penang', 'flamingo-by-the-sea.jpg', 'Flamingo by the Beach Hotel Penang offers the best of both worlds to guests - set along Jalan Tanjung Bunggah, it is close to the soft white sand beaches of Batu Ferringhi as well as only a ten-minute drive away from Gurney Drive. An audacious mix of architectural patterns and bold colours best describes the hotels style - its 280 rooms and suites are sleek and modern, done up in a neutral colour palette of beige, brown and buttercup yellow. There are four room categories: the Deluxe Room Hill View, Deluxe Room Sea View, Two-Bedroom Suite and Three-Bedroom Suite, with all units offering a private balcony with views of either the hillside or sea. '),
-(19, 'Bayview Beach Resort Penang', 'bayview-georgetown.jpg', 'IT is a very luxurious hotel'),
-(20, 'Hard Rock Hotel Penang Penang', 'shopping13.jpg', 'It is a good and luxury hotel');
+(17, 'Flamingo By The Beach Penang', 'flamingo-by-the-sea.jpg', 'Flamingo by the Beach Hotel Penang offers the best of both worlds to guests - set along Jalan Tanjung Bunggah, it is close to the soft white sand beaches of Batu Ferringhi as well as only a ten-minute drive away from Gurney Drive. An audacious mix of architectural patterns and bold colours best describes the hotels style - its 280 rooms and suites are sleek and modern, done up in a neutral colour palette of beige, brown and buttercup yellow. There are four room categories: the Deluxe Room Hill View, Deluxe Room Sea View, Two-Bedroom Suite and Three-Bedroom Suite, with all units offering a private balcony with views of either the hillside or sea. ');
 
 -- --------------------------------------------------------
 
@@ -105,13 +118,12 @@ INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `hotel_image`, `hotel_desc`) VALU
 -- Table structure for table `restaurant`
 --
 
-CREATE TABLE IF NOT EXISTS `restaurant` (
-  `restaurant_id` int(100) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `restaurant` (
+  `restaurant_id` int(100) NOT NULL,
   `restaurant_name` varchar(255) NOT NULL,
   `restaurant_image` text NOT NULL,
-  `restaurant_desc` text NOT NULL,
-  PRIMARY KEY (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+  `restaurant_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `restaurant`
@@ -133,13 +145,12 @@ INSERT INTO `restaurant` (`restaurant_id`, `restaurant_name`, `restaurant_image`
 -- Table structure for table `shopping`
 --
 
-CREATE TABLE IF NOT EXISTS `shopping` (
-  `shopping_id` int(100) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `shopping` (
+  `shopping_id` int(100) NOT NULL,
   `shopping_name` varchar(255) NOT NULL,
   `shopping_image` text NOT NULL,
-  `shopping_desc` text NOT NULL,
-  PRIMARY KEY (`shopping_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+  `shopping_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `shopping`
@@ -155,6 +166,81 @@ INSERT INTO `shopping` (`shopping_id`, `shopping_name`, `shopping_image`, `shopp
 (10, '1st Avenue Mall ', 'shopping13.jpg', 'Set beside Prangin Mall and KOMTAR on Jalan Magazine, the seven-storey 1st Avenue Mall is one of the flashier additions to Penangâ€™s retail landscape. Opened in 2010, it is a bright and clean complex with a range of high-end international marques such as Coach and Victoriaâ€™s Secret, as well as affordable mid-range labels like H&M, Cotton On and Sketchers. Its shopping venues are not the only reason to visit â€“ there is also a bowling alley, movie theatre, karaoke lounge, snooker centre and internet cafe â€“ plus, food-wise, visitors have a choice of over 20 restaurants and cafes.'),
 (11, 'Chowrasta Bazaar ', 'shopping14.jpg', 'Chowrasta Market is perhaps Penangâ€™s most well-known daily market. More than a century old, the dry market area downstairs (thereâ€™s also a wet market at the back selling fresh seafood) sells all sorts of popular local delicacies such as fresh nutmegs, preserved fruits and the classic Ghee Hiang biscuits. The foodstuff sold here are said to be cheaper than anywhere else in Penang. Located one level up on the first floor is a much-loved second-hand bookseller where you can purchase used copies of favourite reads at a fraction of the original price.');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `attraction`
+--
+ALTER TABLE `attraction`
+  ADD PRIMARY KEY (`attraction_id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`contact_id`);
+
+--
+-- Indexes for table `event`
+--
+ALTER TABLE `event`
+  ADD PRIMARY KEY (`event_name`),
+  ADD UNIQUE KEY `event_id` (`event_id`);
+
+--
+-- Indexes for table `hotel`
+--
+ALTER TABLE `hotel`
+  ADD PRIMARY KEY (`hotel_id`);
+
+--
+-- Indexes for table `restaurant`
+--
+ALTER TABLE `restaurant`
+  ADD PRIMARY KEY (`restaurant_id`);
+
+--
+-- Indexes for table `shopping`
+--
+ALTER TABLE `shopping`
+  ADD PRIMARY KEY (`shopping_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `attraction`
+--
+ALTER TABLE `attraction`
+  MODIFY `attraction_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `event`
+--
+ALTER TABLE `event`
+  MODIFY `event_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `hotel`
+--
+ALTER TABLE `hotel`
+  MODIFY `hotel_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT for table `restaurant`
+--
+ALTER TABLE `restaurant`
+  MODIFY `restaurant_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `shopping`
+--
+ALTER TABLE `shopping`
+  MODIFY `shopping_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
