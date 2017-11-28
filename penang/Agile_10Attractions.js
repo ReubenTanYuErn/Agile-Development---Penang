@@ -10,7 +10,7 @@ function initMap() {
 	
 	var A_KekLokSi = {
 		info: '<strong>Kek Lok Si Temple</strong><br>\
-				Address: 1000-L, Tingkat Lembah Ria 1, 11500 Ayer Itam, Pulau Pinang.<br>\
+				Address: 100-L, Tingkat Lembah Ria 1, 11500 Ayer Itam, Pulau Pinang.<br>\
 				<a href="https://goo.gl/maps/HyztHWvLapv">Click here to get directions</a>',
 				lat: 5.397790, 
 				long: 100.272540
